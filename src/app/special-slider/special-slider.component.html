@@ -1,0 +1,37 @@
+<div class="container mt-1 mb-2">
+  <div id="cardSlider" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        *ngFor="let card of cards; let i = index"
+        [class.active]="i === 0"
+      >
+        <div class="card">
+          <div class="row">
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ card.title }}</h5>
+                <p class="card-text">{{ card.text }}</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <img
+                [src]="card.image"
+                [alt]="'Image ' + (i + 1)"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li
+        *ngFor="let card of cards; let i = index"
+        data-target="#cardSlider"
+        [attr.data-slide-to]="i"
+        [class.active]="i === 0"
+      ></li>
+    </ol>
+  </div>
+</div>

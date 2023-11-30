@@ -1,0 +1,25 @@
+<div class="container mt-1 mb-1 pb-2">
+  <div class="transaction" *ngFor="let transaction of transactions">
+    <div class="d-flex">
+      <div class="transaction-icon align-self-center">
+        <i class="{{ transaction.icon }}"></i>
+      </div>
+      <div class="transaction-details">
+        <p class="transaction-name">{{ transaction.name }}</p>
+        <p class="date">{{ transaction.date }}</p>
+        <button class="btn btn-sm repeat">
+          Repeat <i class="fas fa-repeat repeat"></i>
+        </button>
+      </div>
+      <div class="ml-auto text-right">
+        <i class="fa-solid fa-chevron-right next"></i>
+        <p class="transaction-amount">{{ transaction.amount }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary transaction-history">
+    <i class="fa-solid fa-file-invoice-dollar"></i>
+    Transaction History
+  </button>
+</div>
